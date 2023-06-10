@@ -5,22 +5,21 @@ contract bonusVendedor {
 
     string public nomeVendedor;
     uint256  public valorDeBonus;
-    uint256  private valorVenda;
     uint256 public fatorBonus;
 
-        constructor(string memory _nomeVendedor,uint256 _fatorBonus, uint256 _valorVenda)  {
+        constructor(string memory _nomeVendedor,uint256 _fatorBonus)  {
         nomeVendedor = _nomeVendedor;
-        valorVenda = _fatorBonus;
-        valorVenda = _valorVenda;
+        fatorBonus = _fatorBonus;
+
     }
 
-    function valorDeBonificacao() public returns(uint256) {
+    function valorDeBonificacao(uint256 valorVenda) public returns(uint256) {
 
-        valorDeBonus = valorVenda*(fatorBonus/100) + valorVenda;
+        valorDeBonus = valorVenda*(fatorBonus/100);
 
         return valorDeBonus;
     } 
 
 }
 
-// 0x7a14081375471f60b60D5c68adcc542BA436ED6d
+// 0x1f3FF6e98dEa265BaeB8FE9D44eBE46C56c6B0b1
