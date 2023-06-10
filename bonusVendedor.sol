@@ -4,18 +4,18 @@ pragma solidity 0.8.20;
 contract bonusVendedor {
 
     string public nomeVendedor;
-    uint32 public valorDeBonus;
-    uint32 private valorVenda;
+    uint256  public valorDeBonus;
+    uint256  private valorVenda;
+    uint256 constant fatorBonus = 10;
 
-    uint32 constant fatorBonus = 500;
 
     function valorDeBonificacao() public returns(uint256) {
 
-        valorDeBonus = valorVenda*fatorBonus;
+        valorDeBonus = valorVenda*(fatorBonus/100);
 
         return valorDeBonus;
     } 
 
 }
 
-// 0xb56dE27e0aEB5C40cc8786d20F7378cE293E61eC
+// 0x66FF7Bd333CF2431A6Bc8Db65816D69d724Ba4CD
