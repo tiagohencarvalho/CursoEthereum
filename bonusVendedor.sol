@@ -4,7 +4,6 @@ pragma solidity 0.8.20;
 contract bonusVendedor {
 
     string public nomeVendedor;
-    uint256  public valorDeBonus;
     uint256 public fatorBonus;
 
         constructor(string memory _nomeVendedor,uint256 _fatorBonus)  {
@@ -13,7 +12,10 @@ contract bonusVendedor {
 
     }
 
-    function valorDeBonificacao(uint256 valorVenda) public returns(uint256) {
+    function valorDeBonificacao(uint256 valorVenda) 
+    public 
+    view
+    returns(uint256 valorDeBonus) {
 
         valorDeBonus = valorVenda*(fatorBonus/100);
 
@@ -22,4 +24,4 @@ contract bonusVendedor {
 
 }
 
-// 0x1f3FF6e98dEa265BaeB8FE9D44eBE46C56c6B0b1
+// 0x6c3F9896A4eCd74C5687F4505Fd739de83c0E35B
